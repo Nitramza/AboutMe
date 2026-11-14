@@ -17,7 +17,7 @@ export function CV({ data }: { data: Record<Language, CVData> }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const spanish = language === "es";
   const current = data[language];
-  const nav = [{ id: "experience", text: spanish ? "Experiencia" : "Experience" }, { id: "projects", text: spanish ? "Trabajo" : "Work" }, { id: "skills", text: spanish ? "Habilidades" : "Skills" }];
+  const nav = [{ id: "experience", text: spanish ? "Trayectoria" : "Experience" }, { id: "projects", text: spanish ? "Proyectos" : "Projects" }, { id: "skills", text: spanish ? "Skills" : "Skills" }];
 
   useEffect(() => { document.documentElement.lang = language; }, [language]);
   useEffect(() => {

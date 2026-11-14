@@ -5,7 +5,7 @@ export function Hero({ profile, language, asset }: { profile: Profile; language:
   const spanish = language === "es";
   return (
     <section className="hero" aria-labelledby="profile-name">
-      <div className="eyebrow"><span className="accent-line" />JAVA / SPRING BOOT / KAFKA</div>
+      <div className="eyebrow"><span className="accent-line" />BACKEND / FULL STACK / SOFTWARE ENGINEERING</div>
       <div className="hero-grid">
         <div>
           <h1 id="profile-name">{profile.name}</h1>

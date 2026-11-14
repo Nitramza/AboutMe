@@ -23,7 +23,7 @@ for (const width of [375, 1440]) {
       if (width < 720) {
         await page.getByRole("button", { name: "Menú", exact: true }).click();
         await expect(page.getByRole("navigation", { name: "Navegación móvil" })).toBeVisible();
-        await page.getByRole("navigation", { name: "Navegación móvil" }).getByRole("link", { name: "Experiencia" }).click();
+        await page.getByRole("navigation", { name: "Navegación móvil" }).getByRole("link", { name: "Trayectoria" }).click();
         await expect(page.getByRole("navigation", { name: "Navegación móvil" })).toHaveCount(0);
       }
       for (const file of ["/cv.pdf", "/cv-en.pdf", "/cv-preview-es.png", "/cv-preview-en.png"]) {
@@ -58,6 +58,23 @@ test("personalized PDF downloads use the correct language and name", async ({ pa
   }
 });
 
+test("portfolio separates personal work from enterprise case studies", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.getByRole("heading", { name: "Proyectos y trabajo" })).toBeVisible();
+  await expect(page.locator(".project-group").nth(0)).toContainText("PROYECTOS PERSONALES");
+  await expect(page.locator(".project-group").nth(1)).toContainText("TRABAJO PROFESIONAL");
+  const portfolio = page.getByRole("article").filter({ hasText: "CV web y portafolio profesional" });
+  await expect(portfolio.getByRole("link", { name: "Código (GitHub)" })).toHaveAttribute("href", "https://github.com/Nitramza/AboutMe");
+  await expect(portfolio.getByRole("link", { name: "Demo en vivo" })).toHaveAttribute("href", "https://nitramza.github.io/AboutMe/");
+  const projectImage = portfolio.locator("img");
+  await projectImage.scrollIntoViewIfNeeded();
+  await expect.poll(() => projectImage.evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  await expect(page.getByRole("heading", { name: "Tecnología, prácticas y liderazgo" })).toBeVisible();
+  await expect(page.locator("#skills")).toContainText("Liderazgo de equipos de desarrollo");
+  await expect(page.locator("#skills")).toContainText("Model Context Protocol (MCP)");
+  await expect(page.locator("#skills")).toContainText("Capacitación técnica");
+});
+
 for (const language of ["es", "en"] as const) {
   test(`${language}: printable resume has conventional sections and linear reading order`, async ({ page }) => {
     await page.goto(`/resume/${language}/`);
@@ -86,4 +103,19 @@ test("keyboard navigation starts at skip link and respects reduced motion", asyn
   await page.keyboard.press("Enter");
   await expect(page).toHaveURL(/#main$/);
   expect(await page.locator(".hero").evaluate(element => getComputedStyle(element).animationName)).toBe("none");
+});
+
+test("minimal tech theme exposes the requested colors in light and dark modes", async ({ page }) => {
+  await page.goto("/");
+  const palette = await page.evaluate(() => {
+    const styles = getComputedStyle(document.documentElement);
+    return Object.fromEntries(["--deep-space", "--royal-blue", "--sky-focus", "--soft-cloud", "--bg", "--accent"].map(token => [token, styles.getPropertyValue(token).trim()]));
+  });
+  expect(palette).toMatchObject({ "--deep-space": "#1b262c", "--royal-blue": "#0f4c75", "--sky-focus": "#3282b8", "--soft-cloud": "#bbe1fa", "--bg": "#f4f8fb", "--accent": "#0f4c75" });
+  await page.getByRole("button", { name: "Cambiar tema" }).click();
+  const darkPalette = await page.evaluate(() => {
+    const styles = getComputedStyle(document.documentElement);
+    return { background: styles.getPropertyValue("--bg").trim(), foreground: styles.getPropertyValue("--text").trim(), accent: styles.getPropertyValue("--accent").trim() };
+  });
+  expect(darkPalette).toMatchObject({ background: "#1b262c", foreground: "#edf7fd", accent: "#bbe1fa" });
 });
