@@ -432,6 +432,12 @@ h1, h2, h3 { font-family: "Space Grotesk", sans-serif; font-weight: 500; line-he
   .stack-group { padding: 7px; }
   .stack-group h3 { font-size: 9px; }
   .stack-group li { padding: 2px 4px; font-size: 7px; }
+  .stack-group-3, .stack-group-4 { grid-column: span 2; }
+  .stack-grid { gap: 5px; }
+  .stack-group { padding: 6px; }
+  .stack-group li { padding: 1px 4px; font-size: 6px; line-height: 1.2; }
+  .stack-footer { margin-top: 6px; padding-top: 6px; }
+  .stack-content .slide-heading { margin-bottom: 10px; }
   .stack-footer > div, .stack-footer p { font-size: 7px; }
   .contact-content { gap: 12px; }
   .contact-copy h2 { font-size: 32px; }
