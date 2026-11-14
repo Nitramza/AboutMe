@@ -1,60 +1,121 @@
-# CV de Martin Vazquez Islas
+# Martin Vazquez Islas
 
-CV web bilingüe en Next.js App Router, TypeScript y Tailwind CSS. Incluye modo claro/oscuro, LinkedIn, experiencia, casos técnicos, habilidades y dos PDF generados con Chromium. La aplicación se exporta como archivos estáticos; no necesita backend en producción.
+## Software Engineer | Backend & Full-Stack Development
 
-## Requisitos
+Software engineer based in Mexico City, focused on building maintainable enterprise applications and connecting systems through reliable APIs and asynchronous workflows. My experience spans backend development, full-stack delivery, application modernization, secure integrations, and collaborative engineering.
 
-- Node.js 24 LTS y npm.
-- En este equipo también se preparó una instalación portable en `.tools/`, ignorada por Git. No es parte de la aplicación ni se debe publicar.
+I work primarily with Java, Spring Boot, REST APIs, Apache Kafka, and relational databases. I apply hexagonal architecture, automated testing, and practical security controls to deliver software that is easier to understand, validate, and maintain. My engineering toolkit includes SQL Server, Oracle, PostgreSQL, JDBC, JUnit, Mockito, SonarQube, Checkmarx, Git, and GitHub Actions.
 
-## Desarrollo
+I also design AI-assisted development workflows with Kiro agents and Agent Skills, steering files, hooks, and Model Context Protocol (MCP) servers. I use these tools to scaffold codebases and accelerate implementation while keeping the work versioned, reviewable, and aligned with engineering practices.
 
-```powershell
-npm ci
-npm run dev
-```
+## Selected Work
 
-Abre `http://127.0.0.1:3000`. Si Node no está en el PATH de este equipo, puedes usar temporalmente:
+### Personal Portfolio and Web CV
 
-```powershell
-$env:Path = (Join-Path $PWD '.tools/node-v24.22.3-win-x64') + ';' + $env:Path
-npm run dev
-```
+A bilingual professional portfolio showcasing my experience, technical work, and downloadable resumes. It includes a responsive interface, Spanish and English content, accessible light and dark themes, automated PDF generation, browser-based tests, and a static GitHub Pages deployment.
 
-## Datos y documentos
+**Technologies:** Next.js, React, TypeScript, Tailwind CSS, Playwright, GitHub Actions, GitHub Pages.
 
-- Actualiza `src/data/cvData.ts`: es la fuente de datos para la web y las vistas imprimibles en español e inglés.
-- Las experiencias no muestran empresas ni fechas de inicio del puesto actual porque esos datos no figuraban en los documentos originales.
-- Los casos técnicos se basan en la experiencia documentada. No se incluyen enlaces ficticios a repositorios o demos.
-- Se conserva el nivel de inglés B1; la calidad de la redacción en inglés no representa una nueva acreditación del titular.
-- Los PDF originales permanecen intactos en la raíz. Los rediseñados son `public/cv.pdf` y `public/cv-en.pdf`.
+- [Live portfolio](https://nitramza.github.io/AboutMe/)
+- [Source code](https://github.com/Nitramza/AboutMe)
 
-Con el servidor de desarrollo en marcha, regenera los PDF y sus vistas previas:
+### Professional Engineering Experience
 
-```powershell
-npx playwright install chromium
-npm run pdf
-```
+My enterprise work includes event-driven integrations with Apache Kafka, secure REST APIs and identity integrations, and application modernization from C# to Java with SAP and external services. These are experience summaries, not independently published personal repositories.
 
-El script comprueba que el contenido no se solape con los pies de página. También puedes revisar `/resume/es/` y `/resume/en/` en el navegador. Para un servidor en otro puerto, configura `CV_BASE_URL` antes de ejecutar el script.
+## Engineering and Collaboration
 
-## Validación y exportación
+- Backend and full-stack application development
+- Hexagonal architecture, microservices, modular monoliths, and event-driven integration
+- API security, authentication, authorization, data encryption, and identity management
+- Automated testing, static quality analysis, clean code, and engineering best practices
+- AI-assisted workflows using agents, Agent Skills, MCP, steering, and hooks
+- Development team leadership, technical training, cross-functional collaboration, and knowledge sharing
 
-```powershell
-npm run typecheck
-npm run lint
-npm test
-npm run build
-```
+## Technical Skills
 
-Las pruebas de navegador requieren el servidor de desarrollo y los PDF generados. Cubren móvil/escritorio, ambos temas, idiomas, imágenes, descargas, teclado y movimiento reducido. Las capturas se guardan en `test-results/`.
+**Backend:** Java, Spring Boot, Spring Security, JDBC, Maven, REST APIs.
 
-El build genera `out/`, incluidos los PDF, las imágenes y las rutas imprimibles. Regenera los PDF después de cambiar los datos y antes de compilar. El workflow `ci.yml` comprueba tipos, lint y exportación sin publicar el sitio.
+**Frontend and web:** React, Next.js, TypeScript, Tailwind CSS, HTML, CSS, AJAX, JSON.
 
-## GitHub Pages
+**Messaging and integration:** Apache Kafka, SAP, asynchronous workflows.
 
-Repositorio: `https://github.com/Nitramza/AboutMe`. El workflow `.github/workflows/deploy.yml` compila y publica la exportación estática al hacer push a `master`; `develop` queda para cambios. Configura `NEXT_PUBLIC_BASE_PATH=/AboutMe` durante el build. Next.js incorpora el prefijo en sus recursos y la aplicación lo aplica a las vistas previas y a los enlaces de descarga.
+**Databases:** SQL Server, Oracle Database, PostgreSQL, SQL, PL/SQL, stored procedures.
 
-En GitHub, selecciona **Settings > Pages > Build and deployment > Source: GitHub Actions**. La rama `master` es la fuente de publicación del workflow. Los cambios se integran primero en `develop` y se promueven a `master` cuando estén listos.
+**Quality and security:** JUnit, Mockito, SonarQube, Checkmarx, Postman, JWT, Okta Verify, XSS and SSRF prevention.
 
-La URL esperada es `https://nitramza.github.io/AboutMe/`, una vez publicado correctamente el workflow. Esta configuración no confirma que la publicación remota haya ocurrido.
+**AI and delivery workflows:** Kiro, AI agents, Agent Skills, Model Context Protocol (MCP), steering, hooks, Git, GitHub Actions.
+
+## Education and Languages
+
+Bachelor's Degree in Computer Systems Engineering.
+
+Spanish: Native. English: Intermediate (B1).
+
+## Contact
+
+- [LinkedIn](https://www.linkedin.com/in/martin-vazquez-islas/)
+- [Email](mailto:martin.vazquez.islas@hotmail.com)
+- Mexico City, Mexico
+
+---
+
+# Martin Vazquez Islas
+
+## Ingeniero de Software | Backend y Desarrollo Full Stack
+
+Ingeniero de software en Ciudad de México, enfocado en crear aplicaciones empresariales mantenibles e integrar sistemas mediante APIs confiables y flujos asíncronos. Mi experiencia incluye desarrollo backend y full stack, modernización de aplicaciones, integraciones seguras y colaboración en equipos de ingeniería.
+
+Trabajo principalmente con Java, Spring Boot, APIs REST, Apache Kafka y bases de datos relacionales. Aplico arquitectura hexagonal, pruebas automatizadas y controles de seguridad para desarrollar soluciones comprensibles, verificables y mantenibles. Mi conjunto de herramientas incluye SQL Server, Oracle, PostgreSQL, JDBC, JUnit, Mockito, SonarQube, Checkmarx, Git y GitHub Actions.
+
+También diseño workflows de desarrollo asistido por IA con agentes y Agent Skills de Kiro, archivos steering, hooks y servidores Model Context Protocol (MCP). Los utilizo para estructurar bases de código y acelerar la implementación, manteniendo el trabajo versionado, revisable y alineado con buenas prácticas de ingeniería.
+
+## Trabajo destacado
+
+### Portafolio profesional y CV web
+
+Portafolio bilingüe para presentar mi trayectoria, trabajo técnico y CV descargable. Incluye una interfaz responsiva, contenidos en español e inglés, temas accesibles claro y oscuro, generación automatizada de PDF, pruebas en navegador y despliegue estático en GitHub Pages.
+
+**Tecnologías:** Next.js, React, TypeScript, Tailwind CSS, Playwright, GitHub Actions y GitHub Pages.
+
+- [Ver portafolio](https://nitramza.github.io/AboutMe/)
+- [Ver código fuente](https://github.com/Nitramza/AboutMe)
+
+### Experiencia de ingeniería empresarial
+
+Mi trabajo en empresas incluye integraciones orientadas a eventos con Apache Kafka, APIs REST seguras e integración de identidad, así como modernización de aplicaciones de C# a Java con SAP y servicios externos. Estos casos resumen experiencia profesional y no se presentan como repositorios personales publicados.
+
+## Ingeniería y colaboración
+
+- Desarrollo de aplicaciones backend y full stack
+- Arquitectura hexagonal, microservicios, monolitos modulares e integración orientada a eventos
+- Seguridad de APIs, autenticación, autorización, cifrado y gestión de identidades
+- Pruebas automatizadas, análisis estático de calidad, clean code y buenas prácticas
+- Workflows de ingeniería asistida por IA con agentes, Agent Skills, MCP, steering y hooks
+- Liderazgo de equipos de desarrollo, capacitación técnica, colaboración entre áreas y transferencia de conocimiento
+
+## Tecnologías
+
+**Backend:** Java, Spring Boot, Spring Security, JDBC, Maven y APIs REST.
+
+**Frontend y web:** React, Next.js, TypeScript, Tailwind CSS, HTML, CSS, AJAX y JSON.
+
+**Mensajería e integración:** Apache Kafka, SAP y workflows asíncronos.
+
+**Bases de datos:** SQL Server, Oracle Database, PostgreSQL, SQL, PL/SQL y procedimientos almacenados.
+
+**Calidad y seguridad:** JUnit, Mockito, SonarQube, Checkmarx, Postman, JWT, Okta Verify y prevención de XSS y SSRF.
+
+**IA y entrega:** Kiro, agentes de IA, Agent Skills, Model Context Protocol (MCP), steering, hooks, Git y GitHub Actions.
+
+## Formación e idiomas
+
+Ingeniería en Sistemas Computacionales.
+
+Español: nativo. Inglés: intermedio (B1).
+
+## Contacto
+
+- [LinkedIn](https://www.linkedin.com/in/martin-vazquez-islas/)
+- [Correo](mailto:martin.vazquez.islas@hotmail.com)
+- Ciudad de México, México

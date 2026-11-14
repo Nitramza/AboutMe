@@ -4,6 +4,7 @@ import "@fontsource/space-grotesk/latin-600.css";
 import "@fontsource/dm-sans/latin-400.css";
 import "@fontsource/dm-sans/latin-500.css";
 import "@fontsource/dm-sans/latin-600.css";
+import "./theme.css";
 import "./globals.css";
 import { cvData } from "@/data/cvData";
 
