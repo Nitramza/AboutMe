@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+.tools/
+test-results/
+playwright-report/
+*.tsbuildinfo
+.env*.local
+/Martin Vazquez Islas_CV.pdf
+/Martin Vazquez Islas_CV_es.pdf
+/.vscode/tasks.json
