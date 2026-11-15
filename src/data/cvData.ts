@@ -25,9 +25,16 @@ export interface ProjectItem {
   name: string;
   description: string;
   technologies: string[];
+  status?: string;
   image?: string;
   codeUrl?: string;
   demoUrl?: string;
+}
+export interface ServiceItem {
+  id: string;
+  title: string;
+  description: string;
+  technologies: string[];
 }
 export interface SkillCategory {
   name: string;
@@ -37,6 +44,7 @@ export interface CVData {
   profile: Profile;
   experience: ExperienceItem[];
   projects: ProjectItem[];
+  services: ServiceItem[];
   skills: SkillCategory[];
   education: string;
   languages: string[];
@@ -54,9 +62,9 @@ export const cvData: Record<Language, CVData> = {
   es: {
     profile: {
       ...contact,
-      title: "Ingeniero de Software | Backend y Desarrollo Full Stack",
+      title: "Ingeniero de Software Full Stack | Arquitectura Backend & Flujos con IA",
       location: "CDMX, México",
-      summary: "Ingeniero de software con experiencia en soluciones backend empresariales, desarrollo full stack e integración de servicios. Especializado en Java, Spring Boot, APIs REST y Apache Kafka; aplico arquitectura hexagonal, seguridad, pruebas automatizadas y workflows de desarrollo asistido por IA. Colaboro y lidero equipos, comparto conocimiento y promuevo código mantenible y buenas prácticas.",
+      summary: "Ingeniero de Software Full Stack & Arquitecto Backend especializado en construir sistemas escalables, APIs de alto rendimiento e interfaces web modernas. Domino el desarrollo empresarial con Java, Spring Boot, Apache Kafka y PostgreSQL, así como stacks ágiles en Go, React y Next.js bajo principios de Arquitectura Hexagonal / Clean Architecture. Integro flujos de desarrollo asistido por IA (Agentic Workflows, BDD y MCP) y automatización inteligente para acelerar entregas sin comprometer la calidad, seguridad ni mantenibilidad del código.",
       pdf: "/cv.pdf",
       downloadName: "ES_Martin_Vazquez_Islas_CV.pdf",
     },
@@ -121,6 +129,12 @@ export const cvData: Record<Language, CVData> = {
       { id: "security", kind: "professional", name: "Seguridad de APIs e identidad", description: "Autenticación y autorización de APIs REST, integración de Okta Verify y mecanismos de cifrado para proteger información sensible.", technologies: ["Spring Security", "JWT", "Okta Verify"] },
       { id: "migration", kind: "professional", name: "Modernización de aplicaciones", description: "Migración de funcionalidades de negocio de C# a Java e integración con SAP y servicios REST externos.", technologies: ["Java", "SAP", "REST APIs"] },
       { id: "ai-workflows", kind: "professional", name: "Workflows de ingeniería asistida por IA", description: "Configuración de agentes y Agent Skills en Kiro, steering, hooks y servidores MCP como parte de workflows de desarrollo versionados con Git y GitHub Actions.", technologies: ["Kiro", "AI agents", "Agent Skills", "MCP", "Steering", "Hooks", "Git", "GitHub Actions"] },
+      { id: "liquidity-saas", kind: "personal", name: "SaaS de Liquidez Quincenal & Control de Tarjetas", description: "En desarrollo: estima la liquidez real considerando fechas de corte de tarjetas y días de gracia.", status: "En Desarrollo / Arquitectura", technologies: ["Go", "Next.js PWA", "PostgreSQL", "Clean Architecture"] },
+    ],
+    services: [
+      { id: "web-pwas", title: "Desarrollo Web & PWAs", description: "Sitios y aplicaciones web responsivas, instalables y listas para usarse en móvil.", technologies: ["Next.js", "React", "PWA"] },
+      { id: "backend-apis", title: "Backend & APIs de Alto Rendimiento", description: "Arquitecturas limpias, migraciones y soluciones sobre bases de datos relacionales.", technologies: ["Go", "Java", "PostgreSQL"] },
+      { id: "automation-ai", title: "Automatización & Flujos con IA", description: "Optimización de procesos operativos mediante scripts, automatizaciones y agentes de IA.", technologies: ["Automation", "Scripts", "AI agents"] },
     ],
     skills: [
       { name: "Backend", items: ["Java", "Spring Boot", "Spring Security", "JDBC", "Maven"] },
@@ -140,9 +154,9 @@ export const cvData: Record<Language, CVData> = {
   en: {
     profile: {
       ...contact,
-      title: "Software Engineer | Backend & Full-Stack Development",
+      title: "Full Stack Software Engineer | Backend Architecture & AI Workflows",
       location: "Mexico City, Mexico",
-      summary: "Software engineer with experience delivering enterprise backend solutions, full-stack applications, and system integrations. Specializes in Java, Spring Boot, REST APIs, and Apache Kafka, applying hexagonal architecture, application security, automated testing, and AI-assisted development workflows. Collaborative technical lead focused on knowledge sharing, maintainable code, and sound engineering practices.",
+      summary: "Full Stack Software Engineer & Backend Architect specializing in scalable systems, high-performance APIs, and modern web interfaces. Experienced in enterprise ecosystems with Java, Spring Boot, Apache Kafka, and PostgreSQL, alongside agile stacks in Go, React, and Next.js under Hexagonal / Clean Architecture principles. I leverage AI-assisted development workflows (Agentic Workflows, BDD, and MCP) and intelligent automation to accelerate delivery while maintaining high standards of security, testing, and clean code.",
       pdf: "/cv-en.pdf",
       downloadName: "EN_Martin_Vazquez_Islas_CV.pdf",
     },
@@ -207,6 +221,12 @@ export const cvData: Record<Language, CVData> = {
       { id: "security", kind: "professional", name: "API security and identity", description: "REST API authentication and authorization, Okta Verify integration, and encryption mechanisms for sensitive information.", technologies: ["Spring Security", "JWT", "Okta Verify"] },
       { id: "migration", kind: "professional", name: "Application modernization", description: "Migration of C# business functionality to Java and integration with SAP platforms and external REST services.", technologies: ["Java", "SAP", "REST APIs"] },
       { id: "ai-workflows", kind: "professional", name: "AI-assisted engineering workflows", description: "Kiro agents and Agent Skills, steering, hooks, and MCP servers configured as part of Git- and GitHub Actions-based development workflows.", technologies: ["Kiro", "AI agents", "Agent Skills", "MCP", "Steering", "Hooks", "Git", "GitHub Actions"] },
+      { id: "liquidity-saas", kind: "personal", name: "Fortnightly Liquidity & Card Management SaaS", description: "In development: estimates real liquidity based on credit-card statement dates and grace periods.", status: "In Development / Architecture", technologies: ["Go", "Next.js PWA", "PostgreSQL", "Clean Architecture"] },
+    ],
+    services: [
+      { id: "web-pwas", title: "Web Development & PWAs", description: "Responsive websites and web applications that can be installed and used on mobile.", technologies: ["Next.js", "React", "PWA"] },
+      { id: "backend-apis", title: "High-Performance Backend & APIs", description: "Clean architectures, migrations, and solutions built on relational databases.", technologies: ["Go", "Java", "PostgreSQL"] },
+      { id: "automation-ai", title: "Automation & AI Workflows", description: "Operational process optimization through scripts, automation, and AI agents.", technologies: ["Automation", "Scripts", "AI agents"] },
     ],
     skills: [
       { name: "Backend", items: ["Java", "Spring Boot", "Spring Security", "JDBC", "Maven"] },
