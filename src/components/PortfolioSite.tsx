@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight, Download, Mail, Menu, Phone, X } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import type { CVData, Language } from "@/data/cvData";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
@@ -72,7 +72,7 @@ export function PortfolioSite({ data }: { data: Record<Language, CVData> }) {
   }
 
   return (
-    <div className="portfolio-shell" id="top">
+    <div className="portfolio-shell" id="top" style={{ "--portfolio-texture": `url("${asset("/portfolio-texture.jpg")}")` } as CSSProperties}>
       <a className="skip-link" href="#content">{language === "es" ? "Ir al contenido" : "Skip to content"}</a>
       <AnimatePresence>{menuOpen && <motion.button className="portfolio-backdrop" aria-label={text.close} onClick={closeMenu} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} />}</AnimatePresence>
       <button className="portfolio-menu-button" type="button" aria-label={menuOpen ? text.close : text.menu} aria-expanded={menuOpen} onClick={() => setMenuOpen(value => !value)}>{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
