@@ -1,6 +1,6 @@
-import { CompactPortfolio } from "@/components/CompactPortfolio";
+import { PortfolioSite } from "@/components/PortfolioSite";
 import { cvData } from "@/data/cvData";
 
 export default function Home() {
-  return <CompactPortfolio data={cvData} />;
+  return <PortfolioSite data={cvData} />;
 }

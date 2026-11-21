@@ -47,3 +47,10 @@
   --deck-blue: #0984e3;
   --deck-cyan: #00cec9;
 }
+
+:root {
+  --portfolio-night: #262626;
+  --portfolio-ivory: #f5f5f7;
+  --portfolio-gold: #d4af37;
+  --portfolio-coral: #f07a53;
+}

@@ -6,6 +6,7 @@ export interface Profile {
   location: string;
   email: string;
   phone: string;
+  github: string;
   linkedin: string;
   pdf: string;
   downloadName: string;
@@ -55,6 +56,7 @@ const contact = {
   name: "Martin Vazquez Islas",
   email: "martin.vazquez.islas@hotmail.com",
   phone: "+52 222 143 6219",
+  github: "https://github.com/Nitramza/AboutMe",
   linkedin: "https://www.linkedin.com/in/martin-vazquez-islas/",
 };
 
@@ -124,12 +126,13 @@ export const cvData: Record<Language, CVData> = {
       },
     ],
     projects: [
-      { id: "portfolio", kind: "personal", name: "CV web y portafolio profesional", description: "Diseño y desarrollo de un portafolio bilingüe para presentar experiencia, proyectos técnicos y CV descargables. Incluye generación automatizada de PDF, diseño adaptable y exportación estática.", technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Playwright", "GitHub Pages"], image: "/cv-preview-en.png", codeUrl: "https://github.com/Nitramza/AboutMe", demoUrl: "https://nitramza.github.io/AboutMe/" },
+      { id: "cae-sushi", kind: "personal", name: "Cae Sushi", description: "Sitio web estático para Cae Sushi, desarrollado como una experiencia web rápida y adaptable. Presenta la propuesta gastronómica, facilita el descubrimiento local y prepara la marca para posicionarse en búsquedas de sushi en Culiacán.", technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "HTML", "CSS"] },
+      { id: "portfolio", kind: "personal", name: "CV web y portafolio profesional", description: "Diseño y desarrollo de un portafolio bilingüe para presentar experiencia, proyectos técnicos y CV descargables. Incluye generación automatizada de PDF, diseño adaptable y exportación estática.", technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Playwright", "GitHub Pages"], codeUrl: "https://github.com/Nitramza/AboutMe", demoUrl: "https://nitramza.github.io/AboutMe/" },
+      { id: "liquidity-saas", kind: "personal", name: "SaaS de Liquidez Quincenal & Control de Tarjetas", description: "En desarrollo: estima la liquidez real considerando fechas de corte de tarjetas y días de gracia.", status: "En Desarrollo / Arquitectura", technologies: ["Go", "Next.js PWA", "PostgreSQL", "Clean Architecture"] },
+      { id: "ai-workflows", kind: "professional", name: "Workflows de ingeniería asistida por IA", description: "Configuración de agentes y Agent Skills en Kiro, steering, hooks y servidores MCP como parte de workflows de desarrollo versionados con Git y GitHub Actions.", technologies: ["Kiro", "AI agents", "Agent Skills", "MCP", "Steering", "Hooks", "Git", "GitHub Actions"] },
       { id: "events", kind: "professional", name: "Integración orientada a eventos", description: "Integración de flujos empresariales asíncronos mediante productores y consumidores Apache Kafka, dentro de aplicaciones Java y Spring Boot.", technologies: ["Apache Kafka", "Java", "Spring Boot"] },
       { id: "security", kind: "professional", name: "Seguridad de APIs e identidad", description: "Autenticación y autorización de APIs REST, integración de Okta Verify y mecanismos de cifrado para proteger información sensible.", technologies: ["Spring Security", "JWT", "Okta Verify"] },
       { id: "migration", kind: "professional", name: "Modernización de aplicaciones", description: "Migración de funcionalidades de negocio de C# a Java e integración con SAP y servicios REST externos.", technologies: ["Java", "SAP", "REST APIs"] },
-      { id: "ai-workflows", kind: "professional", name: "Workflows de ingeniería asistida por IA", description: "Configuración de agentes y Agent Skills en Kiro, steering, hooks y servidores MCP como parte de workflows de desarrollo versionados con Git y GitHub Actions.", technologies: ["Kiro", "AI agents", "Agent Skills", "MCP", "Steering", "Hooks", "Git", "GitHub Actions"] },
-      { id: "liquidity-saas", kind: "personal", name: "SaaS de Liquidez Quincenal & Control de Tarjetas", description: "En desarrollo: estima la liquidez real considerando fechas de corte de tarjetas y días de gracia.", status: "En Desarrollo / Arquitectura", technologies: ["Go", "Next.js PWA", "PostgreSQL", "Clean Architecture"] },
     ],
     services: [
       { id: "web-pwas", title: "Desarrollo Web & PWAs", description: "Sitios y aplicaciones web responsivas, instalables y listas para usarse en móvil.", technologies: ["Next.js", "React", "PWA"] },
@@ -216,12 +219,13 @@ export const cvData: Record<Language, CVData> = {
       },
     ],
     projects: [
-      { id: "portfolio", kind: "personal", name: "Web CV and professional portfolio", description: "Designed and built a bilingual portfolio showcasing experience, technical projects, and downloadable resumes. Includes automated PDF generation, responsive layouts, and static export.", technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Playwright", "GitHub Pages"], image: "/cv-preview-en.png", codeUrl: "https://github.com/Nitramza/AboutMe", demoUrl: "https://nitramza.github.io/AboutMe/" },
+      { id: "cae-sushi", kind: "personal", name: "Cae Sushi", description: "A static website for Cae Sushi, built as a fast, responsive web experience ready for deployment on its own domain. It presents the food brand, supports local discovery, and prepares the business for sushi-related searches in Culiacan.", technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "HTML", "CSS"] },
+      { id: "portfolio", kind: "personal", name: "Web CV and professional portfolio", description: "Designed and built a bilingual portfolio showcasing experience, technical projects, and downloadable resumes. Includes automated PDF generation, responsive layouts, and static export.", technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Playwright", "GitHub Pages"], codeUrl: "https://github.com/Nitramza/AboutMe", demoUrl: "https://nitramza.github.io/AboutMe/" },
+      { id: "liquidity-saas", kind: "personal", name: "Fortnightly Liquidity & Card Management SaaS", description: "In development: estimates real liquidity based on credit-card statement dates and grace periods.", status: "In Development / Architecture", technologies: ["Go", "Next.js PWA", "PostgreSQL", "Clean Architecture"] },
+      { id: "ai-workflows", kind: "professional", name: "AI-assisted engineering workflows", description: "Kiro agents and Agent Skills, steering, hooks, and MCP servers configured as part of Git- and GitHub Actions-based development workflows.", technologies: ["Kiro", "AI agents", "Agent Skills", "MCP", "Steering", "Hooks", "Git", "GitHub Actions"] },
       { id: "events", kind: "professional", name: "Event-driven integration", description: "Asynchronous enterprise workflow integration through Apache Kafka producers and consumers in Java and Spring Boot applications.", technologies: ["Apache Kafka", "Java", "Spring Boot"] },
       { id: "security", kind: "professional", name: "API security and identity", description: "REST API authentication and authorization, Okta Verify integration, and encryption mechanisms for sensitive information.", technologies: ["Spring Security", "JWT", "Okta Verify"] },
       { id: "migration", kind: "professional", name: "Application modernization", description: "Migration of C# business functionality to Java and integration with SAP platforms and external REST services.", technologies: ["Java", "SAP", "REST APIs"] },
-      { id: "ai-workflows", kind: "professional", name: "AI-assisted engineering workflows", description: "Kiro agents and Agent Skills, steering, hooks, and MCP servers configured as part of Git- and GitHub Actions-based development workflows.", technologies: ["Kiro", "AI agents", "Agent Skills", "MCP", "Steering", "Hooks", "Git", "GitHub Actions"] },
-      { id: "liquidity-saas", kind: "personal", name: "Fortnightly Liquidity & Card Management SaaS", description: "In development: estimates real liquidity based on credit-card statement dates and grace periods.", status: "In Development / Architecture", technologies: ["Go", "Next.js PWA", "PostgreSQL", "Clean Architecture"] },
     ],
     services: [
       { id: "web-pwas", title: "Web Development & PWAs", description: "Responsive websites and web applications that can be installed and used on mobile.", technologies: ["Next.js", "React", "PWA"] },
